@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,11 +6,74 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".HangmanActivity" >
-
-    <TextView
+    android:orientation = "vertical"
+    tools:context=".MainActivity" >
+    
+    <ImageView
+        android:id="@+id/image1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:paddingLeft="30dp"
+    	android:paddingRight="30dp"
+        android:src="@drawable/android" />
+      
+     <LinearLayout    	
+    	android:layout_width="fill_parent"
+   		android:layout_height="wrap_content"             
+    	android:orientation="horizontal" 
+    	android:layout_marginTop="35dp">
+       
+       		<TextView
+    		android:id="@+id/letter1"
+    		android:layout_width="match_parent"
+    		android:layout_height="wrap_content"
+    		android:layout_weight="1"
+    		 />
+    		
+    
+        	<TextView
+    		android:id="@+id/letter2"
+    		android:layout_width="match_parent"
+    		android:layout_height="wrap_content"
+    		android:layout_weight="1"
+    		 />
+        	
+        	
 
-</RelativeLayout>
+       	</LinearLayout>
+         
+     
+    <LinearLayout    	
+    	android:layout_width="fill_parent"
+   		android:layout_height="wrap_content"             
+    	android:orientation="horizontal" 
+    	android:layout_marginTop="35dp"
+    	android:gravity="center_horizontal">
+    
+    	<EditText
+    		android:id="@+id/guess_letter"
+    		android:layout_width="50dp"
+    		android:layout_height="50dp" 
+    		android:paddingLeft="30dp"  
+    				
+    		android:inputType="text" />
+    	
+    	<Button
+        	android:layout_width="100dp"
+        	android:layout_height="50dp"
+        	
+        	android:id="@+id/check_letter"   
+        	android:text="@string/check_letter"
+        	android:color="#aaaaaa"	/>
+    
+    </LinearLayout>
+    
+    <TextView
+    		android:id="@+id/used_letters"
+    		android:layout_width="match_parent"
+    		android:layout_height="wrap_content"
+    		android:gravity="center_horizontal" />
+    
+ 
+      
+</LinearLayout>
