@@ -48,8 +48,9 @@ public class HangmanActivity extends Activity implements OnClickListener {
 
 			for (int j = 0; j < value.length(); j++) {
 				words[j] = new EditText(this);
-				words[j].setLayoutParams(new LayoutParams(
-						LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+				words[j].setLayoutParams(new LinearLayout.LayoutParams(
+						LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT,1f));
+				words[j].setTextSize(12);
 				words[j].setText("-");
 				words[j].setEnabled(false);
 				row.addView(words[j]);
@@ -104,18 +105,20 @@ public class HangmanActivity extends Activity implements OnClickListener {
 				
 			}
 			for (int i = 0; i < indexes.size(); i++) {
-				words[indexes.get(i)].setText(""+c);
-				correctTimes += indexes.size();
-				if (correctTimes == str.length()) {
-					Context context2 = getApplicationContext();
-					CharSequence text2 = "You were lucky!! I'm so angry!";
-					int duration2 = Toast.LENGTH_LONG;
-
-					Toast toast2 = Toast.makeText(context2, text2, duration2);
-					toast2.show();
-					this.finish();
-				}
+				words[indexes.get(i)].setText(""+c);				
 			}
+			
+			correctTimes += indexes.size();
+			if (correctTimes == str.length()) {
+				Context context2 = getApplicationContext();
+				CharSequence text2 = "You were lucky!! I'm so angry!";
+				int duration2 = Toast.LENGTH_LONG;
+
+				Toast toast2 = Toast.makeText(context2, text2, duration2);
+				toast2.show();
+				this.finish();
+			}
+			
 			TextView usedLetters = (TextView) findViewById(R.id.used_letters);
 			usedLetters.setText(game.getUsedLetters());
 			

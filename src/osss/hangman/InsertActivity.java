@@ -31,6 +31,7 @@ public class InsertActivity extends Activity implements OnClickListener {
 	public void onClick(View arg0) {
 		EditText text = (EditText) findViewById(R.id.insert_guess);
 		String word = text.getText().toString();
+		text.setText("");
 		
 		if (word != null && word.length() > 0) {
 			Intent i = new Intent(getApplicationContext(), HangmanActivity.class);
