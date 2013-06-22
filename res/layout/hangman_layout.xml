@@ -7,36 +7,27 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation = "vertical"
-    tools:context=".MainActivity" >
-    
+    tools:context=".HangmanActivity" >
+
     <ImageView
         android:id="@+id/image1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="148dp"
+        android:layout_height="163dp"
+        android:gravity="center_horizontal"
+        android:maxHeight="42dp"
+        android:maxWidth="42dp"
         android:paddingLeft="30dp"
-    	android:paddingRight="30dp"
-        android:src="@drawable/android" />
-      
+        android:paddingRight="30dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/i1" />
+         
      <LinearLayout    	
+        android:id="@+id/row"
     	android:layout_width="fill_parent"
    		android:layout_height="wrap_content"             
     	android:orientation="horizontal" 
     	android:layout_marginTop="35dp">
-       
-       		<TextView
-    		android:id="@+id/letter1"
-    		android:layout_width="match_parent"
-    		android:layout_height="wrap_content"
-    		android:layout_weight="1"
-    		 />
-    		
-    
-        	<TextView
-    		android:id="@+id/letter2"
-    		android:layout_width="match_parent"
-    		android:layout_height="wrap_content"
-    		android:layout_weight="1"
-    		 />
+       		
         	
         	
 
@@ -51,12 +42,12 @@
     	android:gravity="center_horizontal">
     
     	<EditText
-    		android:id="@+id/guess_letter"
-    		android:layout_width="50dp"
-    		android:layout_height="50dp" 
-    		android:paddingLeft="30dp"  
-    				
-    		android:inputType="text" />
+    	    android:id="@+id/guess_letter"
+    	    android:layout_width="50dp"
+    	    android:layout_height="50dp"
+    	    android:enabled="true"
+    	    android:inputType="text"
+    	    android:paddingLeft="30dp" />
     	
     	<Button
         	android:layout_width="100dp"
@@ -72,7 +63,8 @@
     		android:id="@+id/used_letters"
     		android:layout_width="match_parent"
     		android:layout_height="wrap_content"
-    		android:gravity="center_horizontal" />
+    		android:gravity="center_horizontal"
+    		android:text="" />
     
  
       
